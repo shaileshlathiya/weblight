@@ -8,14 +8,14 @@ services:
     image: "redis:latest"
   server:
     ports:
-      - "5000:5000"
+      - "6379:6379"
     build:
       dockerfile: Dockerfile
       context: ./
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MONGO_DB_NAME=library
+      - MONGO_DB_NAME=weblight
       - MONGO_PORT=27017
       - MONGO_HOST=mongo
     links:
